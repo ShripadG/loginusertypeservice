@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>employeeservice</name>
+    </assembly>
+    <members>
+        <member name="T:employeeservice.Common.MyMiddlewareExtensions">
+            <summary>
+            Referred : https://andrewlock.net/adding-default-security-headers-in-asp-net-core/
+            </summary>
+        </member>
+        <member name="M:employeeservice.Common.MyMiddlewareExtensions.UseSecurityHeadersMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder,employeeservice.Common.SecurityHeadersBuilder)">
+            <summary>
+            This method is used to for security headers middleware .
+            <param name="app"></param>
+            <param name="builder"></param>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:employeeservice.Common.SecurityHeadersBuilder">
+            <summary>
+            Referred : https://andrewlock.net/adding-default-security-headers-in-asp-net-core/
+            </summary>
+        </member>
+        <member name="M:employeeservice.Common.SecurityHeadersBuilder.AddCustomHeader(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="header"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:employeeservice.Common.SecurityHeadersBuilder.RemoveHeader(System.String)">
+            <summary>
+            This method is used to remove header.
+            </summary>
+            <param name="header"></param>
+            <returns></returns>
+        </member>
+        <member name="M:employeeservice.Common.SecurityHeadersBuilder.Build">
+            <summary>
+            used to build security policy.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:employeeservice.Common.SecurityHeadersMiddleware">
+            <summary>
+            Referred : https://andrewlock.net/adding-default-security-headers-in-asp-net-core/
+            </summary>
+        </member>
+        <member name="M:employeeservice.Common.SecurityHeadersMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,employeeservice.Common.SecurityHeadersPolicy)">
+            <summary>
+            
+            </summary>
+            <param name="next"></param>
+            <param name="policy"></param>
+        </member>
+        <member name="M:employeeservice.Common.SecurityHeadersMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invoking Http context.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:employeeservice.Common.SecurityHeadersPolicy">
+            <summary>
+            Referred : https://andrewlock.net/adding-default-security-headers-in-asp-net-core/
+            </summary>
+        </member>
+        <member name="P:employeeservice.Common.SecurityHeadersPolicy.SetHeaders">
+            <summary>
+            Setting headers.
+            </summary>
+        </member>
+        <member name="P:employeeservice.Common.SecurityHeadersPolicy.RemoveHeaders">
+            <summary>
+            Removing headers.
+            </summary>
+        </member>
+        <member name="M:employeeservice.Controllers.EmployeesController.Get">
+            <summary>
+            Get all the records
+            </summary>
+            <returns>returns all records from database</returns>
+        </member>
+        <member name="M:employeeservice.Controllers.EmployeesController.Get(System.String)">
+            <summary>
+            Get record by ID
+            </summary>
+            <param name="id">ID to be selected</param>
+            <returns>record for the given id</returns>
+        </member>
+        <member name="M:employeeservice.Controllers.EmployeesController.Post(employeeservice.Models.EmployeeAddRequest)">
+            <summary>
+            Create a new record
+            </summary>
+            <param name="employee">New record to be created</param>
+            <returns>status of the newly added record</returns>
+        </member>
+        <member name="M:employeeservice.Controllers.EmployeesController.Update(employeeservice.Models.Employee)">
+            <summary>
+            Update an existing record by giving _id and _rev values
+            </summary>
+            <param name="employee">record to be updated for given _id and _rev</param>
+            <returns>status of the record updated</returns>
+        </member>
+        <member name="T:employeeservice.Services.ICloudantService">
+            <summary>
+            This is the interface for 
+            </summary>
+        </member>
+        <member name="M:employeeservice.Services.ICloudantService.CreateAsync(employeeservice.Models.EmployeeAddRequest)">
+            <summary>
+            Create a new record
+            </summary>
+            <param name="item">the record to be added.</param>
+            <returns>returns the status of the add record</returns>
+        </member>
+        <member name="M:employeeservice.Services.ICloudantService.UpdateAsync(employeeservice.Models.Employee)">
+            <summary>
+            Update given record
+            </summary>
+            <param name="item">the record to be updated</param>
+            <returns>returns the status of the updated record</returns>
+        </member>
+        <member name="M:employeeservice.Services.ICloudantService.GetAllAsync">
+            <summary>
+            Returns the list of all records in the database
+            </summary>
+            <returns>Returns the list of all records in the database</returns>
+        </member>
+        <member name="M:employeeservice.Services.ICloudantService.GetByIdAsync(System.String)">
+            <summary>
+            Returns the record for the given id.
+            </summary>
+            <param name="id">id of the record to be retrieved</param>
+            <returns>returns the record for given id</returns>
+        </member>
+        <member name="M:employeeservice.Services.ICloudantService.DeleteAsync(System.String,System.String)">
+            <summary>
+            Deletes the record for the given id
+            </summary>
+            <param name="id">id of the record to be deleted</param>
+            <param name="rev">latest revision number of the record to be deleted</param>
+            <returns>returns </returns>
+        </member>
+    </members>
+</doc>

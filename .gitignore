@@ -1,0 +1,6 @@
+.vs/
+obj/
+bin/
+vcap-local.json
+*.csproj.user
+output
